@@ -7,16 +7,26 @@
 $.fn.rssGrid = function(options){
 	
 	var settings = $.extend({
-		"sources": []
-		
+		"sources": [],
+		"newsCount": 10,
+		"boxWidth" : 300,
+		"containerWidth":"100%"
 	}, options);
 	
 	function init(){
-		console.log("settings" + settings.sources);	
+		for(var i=0; i<settings.sources.length; i++){
+			parseRSS(settings.sources[i].url);
+		}
+	}
+	
+	function parseRSS(feed_url){
+		console.log(feed_url);
 	}
 	
 	
-	return this.init();	
+	init();
+	
+	return this;	
 }
 
 }(jQuery));

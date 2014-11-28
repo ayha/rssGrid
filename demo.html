@@ -44,7 +44,13 @@
 		
 		<script type="text/javascript">
 			$(document).ready(function(){
-				$("#newsfeed").rssGrid();
+				$("#newsfeed").rssGrid({
+					sources: [
+						{"name":"Techcrunch", "url":"http://feeds.feedburner.com/techcrunch/startups?format=xml"},
+						{"name":"WSJ Technology", "url":"http://online.wsj.com/xml/rss/3_7455.xml"}
+					]
+					
+				});
 			});
 			
 		</script>
